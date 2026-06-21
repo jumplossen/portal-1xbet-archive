@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>1xbet 站点介绍 · 可信说明与平台概览</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background-color: #f8f9fb;
+            color: #1e2027;
+            line-height: 1.6;
+        }
+
+        /* ---- hero 深色头图 ---- */
+        .hero {
+            background: linear-gradient(145deg, #0b0d12 0%, #1a1d28 70%, #262b3a 100%);
+            color: #eef0f5;
+            padding: 4.2rem 1.8rem 4.8rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: -40%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(229, 157, 37, 0.08) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            margin-bottom: 0.75em;
+        }
+
+        .hero h1 span {
+            color: #e59d25;
+        }
+
+        .hero p {
+            max-width: 720px;
+            margin: 0 auto 1.4rem;
+            font-size: 1.1rem;
+            opacity: 0.85;
+        }
+
+        .hero .tagline {
+            display: inline-block;
+            background: rgba(229, 157, 37, 0.18);
+            padding: 0.35rem 1.4rem;
+            border-radius: 40px;
+            font-size: 0.95rem;
+            color: #e8b860;
+            border: 1px solid rgba(229, 157, 37, 0.25);
+            margin-top: 0.5rem;
+        }
+
+        /* ---- 浅色正文区 通用 ---- */
+        .section {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 3.2rem 1.8rem;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 2rem;
+            margin: 2.2rem 0 1rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: 24px;
+            padding: 1.8rem 1.6rem;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04), 0 2px 6px rgba(0, 0, 0, 0.02);
+            transition: 0.2s ease;
+        }
+
+        .card:hover {
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.07);
+            transform: translateY(-3px);
+        }
+
+        .card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.6rem;
+            font-weight: 550;
+            border-left: 4px solid #e59d25;
+            padding-left: 0.85rem;
+        }
+
+        .card p {
+            color: #3e424d;
+            font-size: 0.98rem;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 550;
+            margin-bottom: 0.5rem;
+            color: #1b1e26;
+        }
+
+        .section-sub {
+            color: #5b5f6b;
+            margin-bottom: 1.2rem;
+            font-size: 1rem;
+        }
+
+        .intro-text {
+            font-size: 1.05rem;
+            max-width: 800px;
+            color: #2c2f38;
+            margin-bottom: 1.8rem;
+        }
+
+        .faq-group {
+            background: white;
+            border-radius: 20px;
+            padding: 1.2rem 0;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.03);
+            margin: 2rem 0 1.5rem;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #eaecf0;
+            padding: 1.1rem 1.8rem;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-question {
+            font-weight: 560;
+            font-size: 1.04rem;
+            color: #1b1e26;
+            margin-bottom: 0.2rem;
+        }
+
+        .faq-answer {
+            color: #4b4f5a;
+            font-size: 0.97rem;
+            margin-top: 0.25rem;
+        }
+
+        .link-highlight {
+            color: #c7861e;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid rgba(199, 134, 30, 0.3);
+            transition: 0.15s;
+        }
+
+        .link-highlight:hover {
+            color: #a56f16;
+            border-bottom-color: #a56f16;
+        }
+
+        .footer-links {
+            border-top: 1px solid #dee0e6;
+            padding: 2.4rem 1.8rem;
+            max-width: 1120px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            color: #5f6472;
+            font-size: 0.9rem;
+            gap: 1rem 2rem;
+        }
+
+        .footer-links a {
+            color: #5f6472;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: 0.15s;
+        }
+
+        .footer-links a:hover {
+            color: #c7861e;
+            border-bottom-color: #c7861e;
+        }
+
+        .footer-links .emphasized-link {
+            color: #c7861e;
+            font-weight: 500;
+        }
+
+        .footer-copy {
+            flex: 1 1 100%;
+            text-align: center;
+            margin-top: 0.6rem;
+            opacity: 0.7;
+        }
+
+        @media (max-width: 640px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .hero p {
+                font-size: 1rem;
+            }
+            .section {
+                padding: 2.2rem 1.2rem;
+            }
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+            .faq-item {
+                padding: 1rem 1.2rem;
+            }
+            .footer-links {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HERO 区 -->
+    <header class="hero">
+        <h1><span>1xbet</span> · 站点定位与可信说明</h1>
+        <p>一个成熟稳定的在线服务平台，围绕体育赛事、数字娱乐与综合互动展开。我们更关注平台本身的可访问性、信息透明度与长期可靠性。</p>
+        <div class="tagline">基于公开信息 · 中立介绍视角</div>
+    </header>
+
+    <!-- 优势区 + 说明区 融合 -->
+    <section class="section">
+        <h2 class="section-title">平台特征与使用场景</h2>
+        <p class="section-sub">从产品构成、访问体验到日常运维，多角度梳理关键信息。</p>
+
+        <div class="card-grid">
+            <div class="card">
+                <h3>多终端适配</h3>
+                <p>响应式界面与独立客户端并存，桌面与移动设备均可流畅操作。平台持续优化加载策略，降低延迟对交互的影响。</p>
+            </div>
+            <div class="card">
+                <h3>内容覆盖面</h3>
+                <p>涵盖主流体育联赛、电竞赛事及数字娱乐项目，并提供实时数据、统计与回放模块，满足不同用户的资讯需求。</p>
+            </div>
+            <div class="card">
+                <h3>账户与安全</h3>
+                <p>采用多重验证机制与数据加密传输，账户操作留痕可追溯。平台定期更新安全策略，以应对潜在风险。</p>
+            </div>
+            <div class="card">
+                <h3>本地化支持</h3>
+                <p>界面语言、支付渠道与客服时段均考虑区域差异，多币种结算与常见本地化选项降低了使用门槛。</p>
+            </div>
+        </div>
+
+        <div class="intro-text" style="margin-top:2rem;">
+            <p>对于初次接触该站点的用户，理解其服务边界与可靠性非常重要。以下从信息透明度与平台运营两个维度做进一步说明。</p>
+            <p style="margin-top:1rem;">
+                作为长期运行的平台，<a href="https://portal--1xbet.com" class="link-highlight">1xbet</a> 在多个国家和地区积累了可观的用户基数。其站点结构强调信息层级清晰，核心功能入口直观，同时辅以实时公告与帮助中心。无论你关注的是体育数据时效性，还是账户管理的便捷度，都可以在对应模块中找到具体指引。
+            </p>
+        </div>
+    </section>
+
+    <!-- 说明区 承接 + 可信角度 -->
+    <section class="section" style="padding-top: 0.5rem;">
+        <h2 class="section-title">关于可信度的客观梳理</h2>
+        <p class="section-sub">任何线上平台的可信度都应基于可验证信息与长期运营记录，而非单一宣传。</p>
+
+        <div style="display: flex; flex-wrap: wrap; gap: 2rem; margin: 1.5rem 0;">
+            <div style="flex: 1; min-width: 200px;">
+                <ul style="list-style: none; padding: 0;">
+                    <li style="padding: 0.5rem 0; border-bottom: 1px solid #edeff3;">✓ 域名注册历史与 SSL 证书持续有效</li>
+                    <li style="padding: 0.5rem 0; border-bottom: 1px solid #edeff3;">✓ 用户协议与隐私政策公开可查</li>
+                    <li style="padding: 0.5rem 0; border-bottom: 1px solid #edeff3;">✓ 客服渠道包含邮件、在线表单与常见问题库</li>
+                    <li style="padding: 0.5rem 0; border-bottom: 1px solid #edeff3;">✓ 第三方支付网关与平台数据隔离</li>
+                </ul>
+            </div>
+            <div style="flex: 1; min-width: 200px; background: #f3f5f9; border-radius: 18px; padding: 1.4rem 1.6rem;">
+                <p style="font-weight: 500; margin-bottom: 0.3rem;">运营说明</p>
+                <p style="color: #3d414d; font-size: 0.95rem;">平台遵循所登记司法辖区的商业规范，定期接受外部审计（如适用）。用户投诉与争议处理设有独立通道，相关记录保留不少于法定期限。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ 摘要  -->
+    <section class="section" style="padding-top: 0;">
+        <h2 class="section-title" style="margin-bottom: 0.8rem;">常见疑问摘要</h2>
+        <div class="faq-group">
+            <div class="faq-item">
+                <div class="faq-question">1xbet 的官方入口是唯一的吗？</div>
+                <div class="faq-answer">是的，所有正式服务均通过 <a href="https://portal--1xbet.com" class="link-highlight">1xbet</a> 域名及其关联子域提供。建议用户直接访问该域名，避免使用第三方镜像或未经验证的转发链接。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">平台是否提供中文界面？</div>
+                <div class="faq-answer">支持，语言选项可在账户设置或页面底部切换。中文翻译覆盖主要导航、帮助中心与常见交易流程，部分动态内容可能以英文显示。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">账户注册需要哪些信息？</div>
+                <div class="faq-answer">基本注册要求包括电子邮箱或手机号，以及设置登录密码。部分司法管辖区需额外提交身份证明以完成验证，这是为了符合反洗钱与年龄核实规定。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">如何获取最新的平台公告？</div>
+                <div class="faq-answer">站内公告栏位于首页底部或用户面板的消息中心。此外，部分地区会通过注册邮箱发送重要更新，建议留意收件箱及垃圾邮件分类。</div>
+            </div>
+        </div>
+        <p style="font-size: 0.95rem; color: #5b5f6b; margin-top: 0.2rem;">
+            以上摘要基于平台公开信息整理，具体政策与条款以网站实时版本为准。
+        </p>
+    </section>
+
+    <!-- 底部链接 -->
+    <footer class="footer-links">
+        <div>
+            <a href="https://portal--1xbet.com" class="emphasized-link">1xbet</a>
+            <span style="margin:0 0.6rem; opacity:0.3;">·</span>
+            <a href="#">服务条款</a>
+            <span style="margin:0 0.6rem; opacity:0.3;">·</span>
+            <a href="#">隐私政策</a>
+        </div>
+        <div>
+            <span>帮助中心 · 常见问题</span>
+        </div>
+        <div class="footer-copy">
+            <span>介绍页内容仅供参考，不构成任何形式的推荐或保证。</span>
+        </div>
+    </footer>
+
+</body>
+</html>
