@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
+    <title>MK体育 · 信息索引与资料整理</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f5f5f0;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            color: #1e1e1e;
+            line-height: 1.7;
+        }
+
+        .hero {
+            background: linear-gradient(145deg, #0d1b2a 0%, #1b2d3f 100%);
+            color: #e8eae3;
+            padding: 4rem 2rem 3rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 40px;
+            background: linear-gradient(to bottom, transparent, #f5f5f0);
+        }
+
+        .hero h1 {
+            font-size: 2.4rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            margin-bottom: 0.6rem;
+            color: #f0f2e9;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+            opacity: 0.85;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem 4rem;
+        }
+
+        .intro-box {
+            background: white;
+            border-radius: 28px;
+            padding: 2.2rem 2rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+            margin-bottom: 2.5rem;
+        }
+
+        .intro-box h2 {
+            font-size: 1.5rem;
+            font-weight: 450;
+            color: #1b2d3f;
+            margin-bottom: 1rem;
+            border-left: 4px solid #8b9a7b;
+            padding-left: 1rem;
+        }
+
+        .intro-box p {
+            margin-bottom: 1.2rem;
+        }
+
+        .highlight-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.4rem;
+            margin: 2rem 0 1.5rem;
+        }
+
+        .highlight-card {
+            background: #f1f3ed;
+            border-radius: 20px;
+            padding: 1.5rem 1.2rem;
+            transition: all 0.2s ease;
+            border: 1px solid transparent;
+        }
+
+        .highlight-card:hover {
+            background: #eaece4;
+            border-color: #c5cfb5;
+        }
+
+        .highlight-card .icon {
+            font-size: 1.2rem;
+            background: #2c3e4e;
+            color: #eef1e8;
+            width: 36px;
+            height: 36px;
+            border-radius: 12px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 0.6rem;
+        }
+
+        .highlight-card h3 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-bottom: 0.4rem;
+            color: #0d1b2a;
+        }
+
+        .highlight-card p {
+            font-size: 0.95rem;
+            color: #2f3d46;
+        }
+
+        .suggestion-area {
+            background: #e8eae1;
+            border-radius: 28px;
+            padding: 2rem 2rem 1.8rem;
+            margin: 2.2rem 0;
+        }
+
+        .suggestion-area h3 {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: #1b2d3f;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 1rem;
+        }
+
+        .suggestion-area ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .suggestion-area li {
+            padding: 0.5rem 0;
+            border-bottom: 1px dashed #cbd2bf;
+            display: flex;
+            gap: 0.6rem;
+        }
+
+        .suggestion-area li:last-child {
+            border-bottom: none;
+        }
+
+        .suggestion-area li::before {
+            content: '•';
+            color: #4a6f5e;
+            font-weight: bold;
+        }
+
+        .faq-mini {
+            background: white;
+            border-radius: 28px;
+            padding: 2rem 2rem 1.6rem;
+            margin: 2rem 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+        }
+
+        .faq-mini h3 {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: #1b2d3f;
+            margin-bottom: 1.2rem;
+        }
+
+        .faq-item {
+            margin-bottom: 1rem;
+        }
+
+        .faq-item strong {
+            display: block;
+            font-weight: 500;
+            color: #2f4a3e;
+            margin-bottom: 0.2rem;
+        }
+
+        .faq-item p {
+            margin-left: 0.2rem;
+            color: #2e3b40;
+        }
+
+        .link-sentence {
+            background: #f8f9f6;
+            border-radius: 48px;
+            padding: 0.8rem 1.5rem;
+            display: inline-block;
+            margin: 1.2rem 0 0.5rem;
+        }
+
+        .link-sentence a {
+            color: #1b5a3f;
+            font-weight: 500;
+            text-decoration: none;
+            border-bottom: 2px solid #b2c7a2;
+            transition: border-color 0.15s, color 0.15s;
+        }
+
+        .link-sentence a:hover {
+            border-bottom-color: #0f2f20;
+            color: #0a2e1f;
+        }
+
+        .footnote {
+            margin-top: 2.8rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #d3d8cb;
+            color: #55665c;
+            font-size: 0.85rem;
+            text-align: center;
+        }
+
+        @media (max-width: 680px) {
+            .hero h1 { font-size: 1.8rem; }
+            .highlight-grid { grid-template-columns: 1fr; }
+            .intro-box, .suggestion-area, .faq-mini { padding: 1.6rem 1.2rem; }
+            .container { padding: 1.2rem; }
+        }
+
+        @media (max-width: 480px) {
+            .hero { padding: 3rem 1rem 2.2rem; }
+            .hero h1 { font-size: 1.5rem; }
+            .hero p { font-size: 0.95rem; }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <h1>资料整理 · 信息索引</h1>
+        <p>MK体育相关内容的结构化梳理与使用参考</p>
+    </section>
+
+    <main class="container">
+        <article class="intro-box">
+            <h2>关于这个索引页</h2>
+            <p>日常整理资料时，总会遇到一些值得反复回看的信息源。这个页面是我把关于 <strong>MK体育</strong> 的相关信息、功能亮点和适用场景做了一次集中梳理。不是为了推荐什么，只是给自己和有兴趣的人一份比较干净的笔记式页面。</p>
+            <p>以下内容来自日常收集与整理，保持客观，不夸大也不藏着掖着。如果你刚好在找一份体育类信息聚合，可以拿它当个参考坐标。</p>
+        </article>
+
+        <div class="highlight-grid">
+            <div class="highlight-card">
+                <div class="icon">📋</div>
+                <h3>分类清晰</h3>
+                <p>赛事、队伍、数据、动态按模块整理，查找时不用东翻西找。</p>
+            </div>
+            <div class="highlight-card">
+                <div class="icon">🧭</div>
+                <h3>导航直接</h3>
+                <p>无论是热门联赛还是小众项目，都能快速定位到对应资料。</p>
+            </div>
+            <div class="highlight-card">
+                <div class="icon">🔄</div>
+                <h3>更新稳定</h3>
+                <p>信息保持同步，不会用几个月前的旧数据糊弄人。</p>
+            </div>
+            <div class="highlight-card">
+                <div class="icon">📎</div>
+                <h3>延伸索引</h3>
+                <p>常见问题与实用提示也一并整理，省去重复搜索的麻烦。</p>
+            </div>
+        </div>
+
+        <div class="suggestion-area">
+            <h3>📎 使用建议</h3>
+            <ul>
+                <li>先浏览整体分类，找到自己最关心的板块，再细看内部条目。</li>
+                <li>把常用项目做个书签，后续回来更新会更快。</li>
+                <li>如果发现信息有出入，可以自己备注一下，毕竟资料总在变动。</li>
+                <li>搭配其他信息源交叉验证，能获得更立体的理解。</li>
+            </ul>
+        </div>
+
+        <div class="faq-mini">
+            <h3>❓ 常见疑问摘要</h3>
+            <div class="faq-item">
+                <strong>这里的内容全面吗？</strong>
+                <p>主要覆盖主流赛事与常见队伍，小众项目正在逐步补充，可以作为起点。</p>
+            </div>
+            <div class="faq-item">
+                <strong>信息多久更新一次？</strong>
+                <p>没有固定周期，但会尽量跟上重要变动，避免长时间陈旧。</p>
+            </div>
+            <div class="faq-item">
+                <strong>怎么反馈问题或补充？</strong>
+                <p>目前主要通过个人笔记渠道整理，暂不开放直接编辑，但欢迎提意见。</p>
+            </div>
+        </div>
+
+        <div class="link-sentence">
+            如果你也想从同一个信息集合开始整理，可以看看 <a href="https://main-index-mksports.com">MK体育</a> 的原始资料结构。
+        </div>
+
+        <div class="footnote">
+            <p>本页为个人资料索引，内容仅供参考，不构成任何引导或承诺。请自行判断信息适用性。</p>
+            <p style="margin-top: 6px;">&copy; 2025 · 整理页</p>
+        </div>
+    </main>
+</body>
+</html>
